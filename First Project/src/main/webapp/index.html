@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Number Guessing Game</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>Number Guessing Game</h1>
+		<p>!!! Welcome to Number Guessing Game !!!<br>
+		   A number has been generated between 1 to 100. Can you guess the number?<br>
+		</p>
+		<form method="post" action="result.jsp">
+			<input type="radio" name="difficulty" value="1"	required> Easy (10 attempts)<br>
+			<input type="radio" name="difficulty" value="2"	required> Medium (5 attempts)<br>
+			<input type="radio" name="difficulty" value="3"	required> Hard (3 attempts)<br>
+			<input type="hidden" name="target" value="<%= new Random().nextInt(100)+1%>">
+			<input type="hidden" name="attempt" value="0">		
+			<button type="submit">SUBMIT</button>
+		</form>
+	</div>
+</body>
+</html>
